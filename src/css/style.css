@@ -1,0 +1,444 @@
+@font-face {
+    font-family: "JF Flat Regular";
+    src: url(../fonts/JF-Flat-regular.eot);
+    src: url(../fonts/JF-Flat-regular.eot?#iefix) format('embedded-opentype'),
+         url('../fonts/JF-Flat-regular.svg#JF Flat Regular') format('svg'),
+         url(../fonts/JF-Flat-regular.woff) format('woff'),
+         url(../fonts/JF-Flat-regular.ttf) format('truetype');
+    font-weight: bolder;
+    font-style: normal;     
+}
+
+body {
+    font-family: "JF Flat Regular", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.429;
+    direction: rtl;
+}
+
+
+
+
+nav.navbar {
+  background-color: gray;
+  padding: 0px;
+  height: 100px;
+}
+
+/* إزالة الحاشية من جهة اليمين والتي يفرضها البوتستراب على القوائم */
+nav.navbar ul.navbar-nav {
+  padding-right: 0; 
+}
+
+/* التنسيقات الخاصة بالعناصر الموجودة في القائمة */
+nav.navbar ul.navbar-nav li a.nav-link {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 40px;
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; 
+}
+
+/* التنسيقات التي تظهر عند مرور مؤشر الفأرة على أحد عناصر القائمة */
+nav.navbar ul.navbar-nav li a.nav-link:hover, 
+nav.navbar ul.navbar-nav li a.nav-link.active {
+  color: #16aeca;
+  background-color: #ffffff; 
+}
+
+/* تغير ترتيب الطبقات لتصبح قائمة التنقل أعلى طبقة في الصفحة */
+nav.navbar {
+  text-align: right;
+  z-index: 20;
+}
+
+/* تصغير حجم شعار الصفحة */
+nav.navbar .navbar-brand img {
+  height: 100px;
+  width: 100px;
+}
+
+#carousel1 {
+  margin-top: 90px;
+  background-color: rosybrown;
+}
+
+
+#card .title h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  padding: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#card .cards {
+  border: rosybrown solid 2px;
+  padding: 10px 15px;
+  height: 100%;
+  width: 100%;
+  background-color: gold;
+}
+
+#card .cards p {
+  font-size: 25px;
+}
+
+
+
+
+
+/* التنسيقات المطبقة على الخط في العنوان */
+section.gallery .title h2 {
+  font-size: 40px;
+  line-height: 60px; 
+}
+/* ضبط الحاشية والهامش الخاص بقسم الصور */
+section.gallery {
+  padding: 120px 0 0; 
+  margin-bottom: 50px;
+}
+section.gallery .title {
+  margin-bottom: 50px; 
+}
+/* تغيير مؤشر الفأرة إلى شكل يد عند المرور على الصور وجعل الرابط التشعبي يغطي كامل الصورة */
+section.gallery .work-gallery a {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 100%; /*-ليصبح عرض هذا العنصر مساوى للآب-*/
+}
+/* لجعل عرض الصورة مساوى للآب*/
+section.gallery .work-gallery a img{
+  width: 100%;
+  height: 300px;
+}
+
+section.gallery .work-gallery .overlay-gallery .carousel {
+  margin-top: 100px;
+}
+/* تنسيقات الطبقة الزرقاء التي تظهر فوق الصور وجعل لون الخط بداخلها أبيض */
+section.gallery .work-gallery a .hover {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  background-color: #16aeca;
+  color: #ffffff;
+  opacity: 0;
+  z-index: 9;
+  transition: all .5s ease;
+}
+/* تنسيق الفقرة النصية داخل البطاقات وجعلها غير مرئية */
+section.services .card .card-block p {
+  font-size: 15px;
+  line-height: 20px;
+  color: #919191;
+  opacity: 0;
+}
+
+/* تنسيقات أيقونة البحث وجعلها في وسط الصفحة */
+section.gallery .work-gallery a .hover i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2em; 
+}
+/* بعد إخفاء الطبقة الزرقاء نقوم باظهارها بشفافية 1 عند مرور مؤشر الفأرة فوقها */
+section.gallery .work-gallery a:hover .hover {
+  opacity: 1; 
+}
+
+
+/* تنسيق الصفحة السوداء (صفحة الأعمال) وتحديد موضعها أمام كل الصفحات */
+section.gallery .work-gallery .overlay-gallery {
+  background: rgba(0,0,0,0.9);
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  height: 100vh;
+  z-index: 30; /*-حتى تظهر فوق شريط التنقل-*/ 
+  overflow: hidden; 
+  text-align: right;
+  padding: 5% 10%;
+  opacity: 0;
+  transition: all 1s ease;
+  margin-top: -100vh;
+}
+/* إخفاء طبقة الأعمال وظهورها عند النقر عليها */
+section.gallery .work-gallery .overlay-gallery:target {
+  opacity: 1;
+  margin-top: 0;
+}
+section.gallery .work-gallery .overlay-gallery img {
+  width: 100%;
+}
+/* التنسيقات الخاصة في العنوان داخل الطبقة */
+section.gallery .work-gallery .overlay-gallery .gallery-text h3 {
+  font-size: 36px;
+  line-height: 52px;
+  color: #16aeca;
+  margin-bottom: 30px; 
+}
+
+
+/* التنسيقات المطبقة على الخط في الفقرة النصية داخل الطبقة */
+section.gallery .work-gallery .overlay-gallery .gallery-text p {
+  font-size: 24px;
+  line-height: 33px;
+  margin-bottom: 50px;
+  color: #919191;
+}
+/* التنسيقات الخاصة بزر زيارة المشروع */
+section.gallery .work-gallery .overlay-gallery .gallery-text a.visit {
+  font-size: 20px;
+  line-height: 50px;
+  border-radius: 25px;
+  padding: 0px 30px;
+  background-color: #16aeca;
+  color: #ffffff;
+  transition: all 0.5s ease-in-out; 
+  Width: auto;
+}
+/* ضبط الهامش الخاص بالفقرة النصية */
+section.gallery .work-gallery .overlay-gallery .gallery-text {
+  margin-top: 40px;
+}
+/* التنسيقات المطبقة على أيقونة الإغلاق */
+section.gallery .work-gallery .overlay-gallery a.close {
+  color: #16aeca;
+  position: absolute;
+  top: 4%;
+  left: 10%;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+}
+
+#footer {
+  
+  padding-top: 20px;
+  padding-bottom: 10px;
+  background-color: #555555;
+}
+
+#footer .back h5 { 
+  color: black;
+}
+
+#map {
+  padding: 0;
+  margin-top: 100px;
+  margin-bottom: 40px;
+}
+
+#contact-options h4 {
+  font-size: 18px;
+  padding-bottom: 12px;
+}
+
+.heading-with-border-bottom {
+  margin-bottom: 20px;
+}
+
+#contact-info {
+  margin-bottom: 25px;
+}
+
+#contact-info .fa-lg {
+  color: #f3af41;
+  font-size: 18px;
+  margin: 10px 10px 7px 10px;
+  width: 25px;
+  text-align: center;
+}
+
+#contact-options textarea {
+  height: 128px;
+}
+
+#contact-options {
+  margin-bottom: 25px;
+}
+
+#contact-options .custom-btn-wiht-icon{
+  background-color: orange;
+}
+
+#contact-options .form-group input:hover,
+#contact-options .form-group input:active,
+#contact-options .form-group input:focus,
+#contact-options .form-group input:active:focus,
+#contact-options .form-group input:active:hover{
+  border: 2px solid #b86d07;
+  color: #000;
+}
+
+#contact-options .form-group textarea:hover,
+#contact-options .form-group textarea:active,
+#contact-options .form-group textarea:focus,
+#contact-options .form-group textarea:active:focus,
+#contact-options .form-group textarea:active:hover{
+  border: 2px solid #b86d07;
+  color: #000;
+}
+
+
+
+
+
+
+
+section.page {
+  margin-top: 150px;
+  padding: 10px 30px;
+}
+
+section.page .gallery-text h3 {
+  font-size: 36px;
+  line-height: 52px;
+  color: #16aeca;
+  margin-bottom: 30px; 
+}
+
+section.page .gallery-text p {
+  font-size: 20px;
+  line-height: 30px;
+  margin-bottom: 50px;
+  color: #919191;
+}
+
+section.page .caros img {
+  width: 100%;
+  height: 380px;
+}
+
+section.page .gallery-text a.visit {
+  border: 2px solid gray;
+  border-radius: 5px;
+  background-color: rgb(50, 58, 50);
+  color: #f3af41;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+section.conf .c {
+  display: inline-flex;
+  margin-top: 40px;
+}
+
+section.conf .c .card-body {
+  border: 2px solid gray;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color:tan ;
+  margin-right: 40px;
+  width: 300px;
+  
+}
+
+section.conf .c .card-body ul li.active {
+  color: yellow;
+}
+
+
+
+section.add {
+  margin-top: 50px;
+  text-align: center;
+  background-color:lightgray;
+  padding: 20px;
+}
+
+
+section.add .cc img {
+  height: 250px;
+ display: block;
+}
+
+section.add .cc .tt {
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+section.add .cc a {
+  text-decoration: none;
+}
+
+section.add .cc .title {
+  margin-top: 15px;
+  margin-bottom: 50px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+section.lll {
+  margin-top: 110px;
+  padding: 20px;
+
+}
+
+section.lll .title h3 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 40px;
+}
+
+section.lll .stat .num1 {
+  margin-top: 50px;
+}
+
+section.lll .stat .num1 .mob {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:991px) {
+  #card .cards p {
+    font-size: 20px;
+  }
+}
+
+@media (max-width:768px) {
+  section.gallery .work-gallery .overlay-gallery .gallery-text p {
+    font-size: 13px;
+  }
+
+  section.gallery .work-gallery a img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width:767px) {
+  section.gallery .work-gallery a img {
+    text-align: center;
+    width: 500px;
+    height: 300px;
+    
+    margin-top: 20px;
+  }
+}
